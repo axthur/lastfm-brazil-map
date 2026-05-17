@@ -1,0 +1,448 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+
+h2 {
+  color: #2b2b2b;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Top bar */
+.topbar {
+  background-color: #000000;
+  padding: 21px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topbar h1 {
+  color: #d1170e;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Seção de busca */
+.search-section {
+  background: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+}
+
+/* Input e botão */
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+  max-width: 400px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #d51007;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+.lastfm-button {
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background-color: #d92323;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lastfm-button:hover {
+  background-color: #f71414;
+}
+
+.lastfm-button:active {
+  transform: translateY(1px);
+}
+
+.lastfm-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.lastfm-button:disabled:hover {
+  background-color: #ccc;
+  transform: none;
+}
+
+/* Loading */
+.loading {
+  color: #666;
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Seção do mapa */
+.map-section {
+  background: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 32px;
+}
+
+/* Mapa */
+path {
+  fill: #ddd;
+  stroke: #333;
+  stroke-width: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+path:hover {
+  fill: #ff6b6b;
+}
+
+/* Estados sem artistas */
+path.state-without-artists {
+  fill: #999;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+path.state-without-artists:hover {
+  fill: #999;
+}
+
+/* Lista de artistas */
+.artists-section {
+  background: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.artists-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.artist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s;
+}
+
+.artist-item:last-child {
+  border-bottom: none;
+}
+
+.artist-item:hover {
+  background-color: #fafafa;
+}
+
+.artist-name {
+  color: #2b2b2b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.artist-playcount {
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.artist-rank {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #666;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 16px;
+}
+
+/* Container do mapa */
+.map-container {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.brazil-map-svg {
+  width: 100%;
+  max-width: 600px;
+  flex-shrink: 0;
+}
+
+/* Card de informações do artista */
+.artist-info-card {
+  flex: 1;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.artist-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #d51007;
+}
+
+.artist-info-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin: 0;
+}
+
+.state-code {
+  background-color: #d51007;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.artist-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.artist-details {
+  text-align: center;
+}
+
+.artist-name-display {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin: 0 0 12px 0;
+}
+
+.artist-plays {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+.artist-plays strong {
+  color: #d51007;
+  font-size: 24px;
+}
+
+.artist-info-placeholder {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+}
+
+.artist-info-placeholder p {
+  margin: 0;
+}
+
+.artist-image-frame {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.artist-image {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  max-width: 300px;
+  border-radius: 6px;
+}
+
+/* Barra de carregamento */
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+  z-index: 200;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background-color: #d51007;
+  transition: width 0.3s ease;
+}
+
+/* Botão de artistas sem estado */
+.artists-without-state-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: #d92323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(217, 35, 35, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  z-index: 250;
+}
+
+.artists-without-state-button:hover {
+  background-color: #f71414;
+  box-shadow: 0 6px 20px rgba(217, 35, 35, 0.4);
+  transform: scale(1.1);
+}
+
+.artists-without-state-button:active {
+  transform: scale(0.95);
+}
+
+.artists-without-state-button img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+/* Popup de artistas sem estado */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 300;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content h3 {
+  margin-bottom: 16px;
+  color: #2b2b2b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.popup-scroll-content {
+  overflow-y: auto;
+  flex: 1;
+  margin-bottom: 16px;
+  padding-right: 8px;
+}
+
+.popup-scroll-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popup-scroll-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.popup-scroll-content::-webkit-scrollbar-thumb {
+  background: #d51007;
+  border-radius: 3px;
+}
+
+.popup-scroll-content::-webkit-scrollbar-thumb:hover {
+  background: #a30b06;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .map-container {
+    flex-direction: column;
+  }
+
+  .brazil-map-svg {
+    max-width: 100%;
+  }
+
+  .artists-without-state-button {
+    bottom: 24px;
+    right: 24px;
+    height: 52px;
+    width: 52px;
+  }
+
+  .artists-without-state-button img {
+    width: 24px;
+    height: 24px;
+  }
+}
